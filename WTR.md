@@ -1,6 +1,4 @@
 # Weighted Ticket Resolution
-## Summary
-Our first release is a formula designed to capture the difficulty that comes with each priority level, and multiply it by the total resolutions to get a score measuring a techs ability to seek out and accomplish difficult tickets.
 ## Abstract
 "Technicians don't grow unless they're challenged. Some technicians will naturally seek out a challenge, but this prevents others from being given an opportunity to rise up and learn."
 
