@@ -18,10 +18,10 @@ WTR addresses this gap by:
 ## Methodology
 ### 1.) Complexty & Impact Weighting
 Tickets are categorized into 4 tiers based on priority
-* Low = 10%
-* Medium = 20%
-* High = 30%
-* Urgent = 40%
+* Low = .1
+* Medium = .2
+* High = .3
+* Urgent = .4
 ### 2.) WTR Formula
 **WTR=∑(Tickets Resolved×Complexity Weight)**
 
