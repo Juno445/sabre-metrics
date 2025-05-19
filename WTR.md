@@ -37,6 +37,7 @@ Technician A’s score is higher despite resolving fewer tickets, reflecting the
 
 ## Score Range
 This is where things really start to get weird. Obviously your mileage may vary, but the idea is to verify the data matches the observation. 
-* 1+ WTR/day  = This is a god amonst men. Fear them as they aren't afraid of any ticket. Not only are they not afraid, they'll solve it before you can even release that email.
-* .5 WTR/day = Average run of the mill tech. Nothing special
+* 1.5+ WTR/day  = This is a god amonst men. Fear them as they aren't afraid of any ticket. Not only are they not afraid, they'll solve it before you can even release that email.
+* 1.25 WTR/day = Strong Technician, not afraid of a challenge
+* .85 WTR/day = Average run of the mill tech. Nothing special
 * .25 WTR/day = Encouragement needed. Coach this tech and nurture them so they can blossom.
