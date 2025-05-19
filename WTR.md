@@ -23,13 +23,13 @@ Tickets are categorized into 4 tiers based on priority
 * High = 30%
 * Urgent = 40%
 ### 2.) WTR Formula
-WTR=∑(Tickets Resolved×Complexity Weight)
+**WTR=∑(Tickets Resolved×Complexity Weight)**
 
 Example:
 
 Technician A resolves 20 low (.1x), 10 medium (.2x), and 1 high (.3x) tickets:
 
-#### WTR=(20×.1)+(10×.2)+(1x.3)=2+2+.3 = *4.3*
+WTR=(20×.1)+(10×.2)+(1x.3)=2+2+.3 = *4.3*
 
 Technician B resolves 30 low (.1x) and 1 medium (.2x) tickets:
 
