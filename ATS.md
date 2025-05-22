@@ -6,9 +6,9 @@ End user communication is vital to a healthy support desk. If the agents aren't 
 
 ATS addresses this gap by:
 
-* Measuring all time based metrics for efficiency
-* Efficiency Metric
-* AVG Resolution time, avg
+* Quantifying the value of an agent's ability to manage their tickets
+* Encourages the techs to stay on top of their tickets
+* 
 
 ## Methodology
 ### 1.) Complexty & Impact Weighting
