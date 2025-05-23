@@ -1,44 +1,60 @@
 # Agent Time Score
+
 ## Abstract
-By measuring how efficient our team is at managing their time, we can see who is a self starter/self manager, and who may need some additional guidance or direction. 
+Measuring agent efficiency goes beyond just ticket volume. The Agent Time Score (ATS) evaluates how quickly agents respond to and resolve tickets, providing a balanced view of time-based performance metrics that impact customer satisfaction and operational efficiency.
+
 ## Introduction
-End user communication is vital to a healthy support desk. If the agents aren't engaging with the users then the users feel a disconnect with IT. When the end users don't feel engaged, that's when escalations happen. An agent's time can be measured on an efficiency scale combining several factors such as avg time to resolove, avg response time, and avg first response time.
+Response and resolution times are critical metrics in IT service management. Customers expect timely acknowledgment and resolution of their issues, making these time-based metrics essential indicators of service quality.
 
-ATS addresses this gap by:
-
-* Quantifying the value of an agent's ability to manage their tickets
-* Encourages the techs to stay on top of their tickets
-* 
+ATS addresses these needs by:
+* Combining first response, average response, and resolution times into a single score
+* Establishing benchmarks for optimal performance
+* Providing a balanced assessment that rewards efficiency without sacrificing quality
 
 ## Methodology
-### 1.) Complexty & Impact Weighting
-Tickets are categorized into 4 tiers based on priority
-* Low = .1
-* Medium = .2
-* High = .3
-* Urgent = .4
 
-Then we add our standard deviation across the last 90 days(calculated separately). Let's assume 1.788 or D
+### 1.) Time Metrics Weighting
+The formula balances three key time metrics with different weightings:
+* Resolution Time (50 points maximum) - 70% weight
+* Average Response Time (33 points maximum) - 10% weight
+* First Response Time (28 points maximum) - 20% weight
 
-And lastly a *.1 just to make the numbers more readable
-### 2.) WTCS Formula
-**WTCS=∑(Tickets Resolved×Complexity Weight) x D) x .1**
+### 2.) Bottom 25% Benchmark Adjustment
+To account for performance variability and establish realistic benchmarks:
+* Calculate the 90-day average for each time metric
+* Multiply each average by 0.25 to find the lowest quartile performance benchmark
+* Replace the standard maximum values (50, 33, 28) with these calculated benchmarks
+
+This adjustment ensures that scores reflect performance relative to the bottom 25% of historical data, creating a more contextual evaluation.
+
+### 3.) ATS Formula
+**ATS = (((50-(AVG((Resolution Time in Bhrs)/3600000)*.7))+(33-(AVG((Avg Response Time in Bhrs)/3600000)*.1))+(28-(AVG((First Response Time in Bhrs)/3600000)*.2))))**
+
+The formula:
+- Converts milliseconds to hours (division by 3600000)
+- Applies the appropriate weighting factor to each metric (0.7, 0.1, 0.2)
+- Subtracts from the maximum possible score for each category
 
 Example:
+Agent A has:
+- Average Resolution Time: 4 hours (14,400,000 ms)
+- Average Response Time: 1 hour (3,600,000 ms)
+- Average First Response Time: 30 minutes (1,800,000 ms)
 
-Technician A resolves 20 low (.1x), 10 medium (.2x), and 1 high (.3x) tickets:
-
-WTCS=(20×.1)+(10×.2)+(1x.3)=2+2+.3 = 4.3 x 1.788 = **7.6884** 
-
-Technician B resolves 30 low (.1x) and 1 medium (.2x) tickets:
-
-WTCS=(30×.1)+(1×.2)=3+.2= 3.2 x 1.788 = **5.7216**
-
-Technician A’s score is higher despite resolving fewer tickets, reflecting their focus on high-impact work.
+ATS = (((50-(14,400,000/3600000)*.7)+(33-(3,600,000/3600000)*.1))+(28-(1,800,000/3600000)*.2)))
+    = (((50-(4*.7))+(33-(1*.1))+(28-(0.5*.2)))
+    = (((50-2.8)+(33-0.1)+(28-0.1))
+    = ((47.2+32.9)+27.9)
+    = 108
 
 ## Score Range
-This is where things really start to get weird. Obviously your mileage may vary, but the idea is to verify the data matches the observation and this was based on our internal team.
-* 1.5+ WTCS/day  = This is a god amonst men. Fear them as they aren't afraid of any ticket. Not only are they not afraid, they'll solve it before you can even release that email.
-* 1.25 WTCS/day = Strong Technician, not afraid of a challenge
-* 1 WTCS/day = Average run of the mill tech. Nothing special
-* .25 WTCS/day = Encouragement needed. Coach this tech and nurture them so they can blossom.
+* 100+ ATS = Exceptional efficiency, consistently providing rapid responses and resolutions
+* 85-99 ATS = Strong performer with good time management skills
+* 70-84 ATS = Average performance, meeting basic time expectations
+* <70 ATS = Needs improvement in response and resolution times
+
+## Implementation Notes
+* Time metrics are measured in business hours (Bhrs) to account for working hours only
+* The maximum possible score is 111 (50+33+28) when all response and resolution times are instantaneous
+* The bottom 25% benchmark adjustment helps create a more realistic and achievable target
+* Negative scores are possible for extremely long handling times and should trigger immediate review
