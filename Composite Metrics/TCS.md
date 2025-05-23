@@ -20,6 +20,7 @@ Tickets are categorized into 4 tiers based on priority
 * Medium = .2
 * High = .3
 * Urgent = .4
+* Lastly we multiply by .1 for readability
 ### 2.) TCS Formula
 **TCS=∑(Tickets Resolved×Complexity Weight) x .1**
 
@@ -27,17 +28,17 @@ Example:
 
 Technician A resolves 20 low (.1x), 10 medium (.2x), and 1 high (.3x) tickets:
 
-TCS=(20×.1)+(10×.2)+(1x.3)=2+2+.3 = 4.3
+TCS=(20×.1)+(10×.2)+(1x.3)=2+2+.3 = **4.3**
 
 Technician B resolves 30 low (.1x) and 1 medium (.2x) tickets:
 
-TCS=(30×.1)+(1×.2)=3+.2= 3.2 
+TCS=(30×.1)+(1×.2)=3+.2= **3.2** 
 
 Technician A’s score is higher despite resolving fewer tickets, reflecting their focus on high-impact work.
 
 ## Score Range
 This is where things really start to get weird. Obviously your mileage may vary, but the idea is to verify the data matches the observation and this was based on our internal team.
-* 1.5+ TCS/day  = This is a god amonst men. Fear them as they aren't afraid of any ticket. Not only are they not afraid, they'll solve it before you can even release that email.
-* 1.25 TCS/day = Strong Technician, not afraid of a challenge
-* 1 TCS/day = Average run of the mill tech. Nothing special
-* .25 TCS/day = Encouragement needed. Coach this tech and nurture them so they can blossom.
+* 1.25+ TCS/day  = This is a god amonst men. Fear them as they aren't afraid of any ticket. Not only are they not afraid, they'll solve it before you can even release that email.
+* 1.1 TCS/day = Strong Technician, not afraid of a challenge
+* .8 TCS/day = Average run of the mill tech. Nothing special
+* .50 TCS/day = Encouragement needed. Coach this tech and nurture them so they can blossom.
