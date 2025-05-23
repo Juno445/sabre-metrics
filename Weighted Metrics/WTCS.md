@@ -25,7 +25,7 @@ Then we add our standard deviation across the last 90 days(calculated separately
 
 And lastly a *.1 just to make the numbers more readable
 ### 2.) WTCS Formula
-**WTCS=∑(Tickets Resolved×Complexity Weight) x D) x .1**
+**WTCS=∑(Tickets Resolved×Complexity Weight) x D)**
 
 Example:
 
