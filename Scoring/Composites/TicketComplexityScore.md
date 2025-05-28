@@ -1,6 +1,6 @@
-#TCS Composite
+# TCS Composite
 
-##Score Ranges
+## Score Ranges
 100+ = Hall of Famer
 75+ = All Star
 50 = Average
