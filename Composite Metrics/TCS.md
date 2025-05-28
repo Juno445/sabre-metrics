@@ -1,44 +1,74 @@
-# Ticket Complexity Score
-## Abstract
-"Technicians don't grow unless they're challenged. Some technicians will naturally seek out a challenge, but this prevents others from being given an opportunity to rise up and learn."
+# Ticket Complexity Score (TCS)
 
-Traditional IT performance metrics often fail to account for the complexity and strategic value of work completed. By treating all tickets equally, organizations risk rewarding volume over impact and stifling growth. This document introduces Weighted Ticket Complexity Score (TCS), a framework that quantifies the difficulty and importance of tasks to fairly evaluate technician performance. Like SABRmetrics in baseball, TCS shifts the focus from superficial metrics (e.g., "tickets resolved") to nuanced, data-driven insights that reflect true contribution and potential.
+## Abstract
+
+"Teams become stronger when individuals rise to the challenge."  
+Traditional ticket metrics often count all tickets equally, failing to reward those who resolve the most demanding problems. **Ticket Complexity Score (TCS)** introduces priority-based weights that encourage agents to step into more complex, high-impact work—ensuring that effort and ability are recognized, not just volume.
 
 ## Introduction
-Modern IT environments are dynamic and complex. A technician resolving 50 password resets (low-complexity) may appear more productive than one handling 5 critical system outages (high-complexity). However, the latter’s work has a greater impact on business operations and requires higher skill.
 
-TCS addresses this gap by:
+Not all tickets are created equal. A technician who handles urgent, high-complexity tickets provides greater business value than one who sticks to easy, low-impact issues. TCS recognizes agents who seek out and resolve tougher tickets by assigning a higher value to those critical efforts. This score helps foster excellence, growth, and fair measurement across your support organization.
 
-* Assigning weights to tickets based on complexity, urgency, and business impact.
-* Creating a scorecard that reflects the true effort and strategic value of work.
-* Encouraging technicians to tackle challenging issues while ensuring fair evaluation.
+**Why TCS?**
+- Motivates agents to handle more impactful and high-priority tickets
+- Clarifies how different types of work contribute to overall performance
+- Promotes both skill development and business-critical problem solving
 
 ## Methodology
-### 1.) Complexty & Impact Weighting
-Tickets are categorized into 4 tiers based on priority
-* Low = .1
-* Medium = .2
-* High = .3
-* Urgent = .4
-* Lastly we multiply by .1 for readability
+
+### 1.) Ticket Priority Weighting
+
+Each ticket is assigned a weight according to its priority:
+
+- **Low Priority:** 0.1
+- **Medium Priority:** 0.2
+- **High Priority:** 0.3
+- **Urgent Priority:** 0.4
+
 ### 2.) TCS Formula
-**TCS=∑(Tickets Resolved×Complexity Weight) x .1**
 
-Example:
+Multiply the number of tickets in each category by its weight, then sum the results and multiply by 2 for visibility and impact.
 
-Technician A resolves 20 low (.1x), 10 medium (.2x), and 1 high (.3x) tickets:
+```
+TCS = ((Low Tickets × 0.1) + (Medium Tickets × 0.2) + (High Tickets × 0.3) + (Urgent Tickets × 0.4)) × 2
+```
 
-TCS=(20×.1)+(10×.2)+(1x.3)=2+2+.3 = **4.3**
+#### Example
 
-Technician B resolves 30 low (.1x) and 1 medium (.2x) tickets:
+Tech A resolves:
+- 15 Low
+- 10 Medium
+- 5 High
+- 2 Urgent
 
-TCS=(30×.1)+(1×.2)=3+.2= **3.2** 
+TCS = ((15 × 0.1) + (10 × 0.2) + (5 × 0.3) + (2 × 0.4)) × 2  
+TCS = (1.5 + 2 + 1.5 + 0.8) × 2  
+TCS = 5.8 × 2 = **11.6**
 
-Technician A’s score is higher despite resolving fewer tickets, reflecting their focus on high-impact work.
+Tech B resolves:
+- 10 Low
+- 3 Medium
+- 4 High
+- 1 Urgent
+
+TCS = ((10 × 0.1) + (3 × 0.2) + (4 × 0.3) + (1 × 0.4)) × 2  
+TCS = (1 + 0.6 + 1.2 + 0.4) × 2  
+TCS = 3.2 × 2 = **6.4**
 
 ## Score Range
-This is where things really start to get weird. Obviously your mileage may vary, but the idea is to verify the data matches the observation and this was based on our internal team.
-* 1.25+ TCS/day  = This is a god amonst men. Fear them as they aren't afraid of any ticket. Not only are they not afraid, they'll solve it before you can even release that email.
-* 1.1 TCS/day = Strong Technician, not afraid of a challenge
-* .8 TCS/day = Average run of the mill tech. Nothing special
-* .50 TCS/day = Encouragement needed. Coach this tech and nurture them so they can blossom.
+
+| TCS Score | Performance Tier          | Description                                               |
+|-----------|--------------------------|-----------------------------------------------------------|
+| 100+      | Hall of Famer 🏆          | Handles an outstanding volume of high-weight tickets       |
+| 75+       | All Star ⭐               | Frequently takes on challenging or urgent work             |
+| 50        | Average 📊                | Steady contributor across all priorities                  |
+| 35 and <  | Encouragement Needed 🎯   | Needs to step up to more complex tickets for growth        |
+
+*Note: With these weights, only extremely high-volume agents will break 50+ in a typical period. Adjust multipliers or review your scoring expectations to fit your team's environment.*
+
+## Notes & Best Practices
+
+- **Visibility:** Use the TCS alongside other KPIs—efficiency, customer satisfaction, etc.—for a holistic view.
+- **Coaching:** Leverage low TCS scores to identify coaching opportunities for agents hesitant to take on heavier workloads.
+- **Customization:** Adjust weights or the final multiplier for your team’s ticket mix and growth priorities.
+- **Data Quality:** Review that tickets are correctly prioritized in your system to ensure fair scoring.
