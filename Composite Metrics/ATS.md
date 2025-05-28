@@ -1,60 +1,75 @@
-# Agent Time Score
+# Agent Time Score (ATS)
 
 ## Abstract
-Measuring agent efficiency goes beyond just ticket volume. The Agent Time Score (ATS) evaluates how quickly agents respond to and resolve tickets, providing a balanced view of time-based performance metrics that impact customer satisfaction and operational efficiency.
+
+“In IT, efficiency isn't about how busy you look—it's about how well you use your time to serve customers.”  
+Traditional IT metrics often focus on sheer ticket volume or raw resolution speed, missing the subtleties of effective time management. Agents who communicate promptly, resolve issues quickly, and maintain quality should be recognized for their efficiency—not just the number of tickets they touch. The Agent Time Score (ATS) provides a balanced, weighted measure of an agent's time management to reveal who’s truly excelling in productivity.
 
 ## Introduction
-Response and resolution times are critical metrics in IT service management. Customers expect timely acknowledgment and resolution of their issues, making these time-based metrics essential indicators of service quality.
 
-ATS addresses these needs by:
-* Combining first response, average response, and resolution times into a single score
-* Establishing benchmarks for optimal performance
-* Providing a balanced assessment that rewards efficiency without sacrificing quality
+In modern IT support environments, agents face pressure to handle tickets swiftly—sometimes at the expense of quality or customer satisfaction. A ticket resolved in half the usual time might indicate proficiency, or it could suggest corners are being cut.  
+ATS addresses this by blending resolution time, response time, and first response time into a single, easy-to-compare score. The result is a fair, motivating metric that celebrates agents who consistently strike the right balance between speed and effectiveness.
+
+**Why ATS?**  
+- Rewards agents who manage time well
+- Promotes consistent, quality service
+- Provides a clear comparison to team averages and benchmarks
 
 ## Methodology
 
-### 1.) Time Metrics Weighting
-The formula balances three key time metrics with different weightings:
-* Resolution Time (50 points maximum) - 70% weight
-* Average Response Time (33 points maximum) - 10% weight
-* First Response Time (28 points maximum) - 20% weight
+### 1.) Weighted Averages  
+ATS uses three distinct metrics, each with a different impact:
+- **Resolution Time** (50% weight) – How long it takes, on average, to fully resolve a ticket.
+- **Average Response Time** (20% weight) – How quickly an agent responds to customer replies during a ticket’s lifecycle.
+- **First Response Time** (30% weight) – How soon an agent replies to the first customer message.
 
-### 2.) Bottom 25% Benchmark Adjustment
-To account for performance variability and establish realistic benchmarks:
-* Calculate the 90-day average for each time metric
-* Multiply each average by 0.25 to find the lowest quartile performance benchmark
-* Replace the standard maximum values (50, 33, 28) with these calculated benchmarks
+All time values should be measured in hours.
 
-This adjustment ensures that scores reflect performance relative to the bottom 25% of historical data, creating a more contextual evaluation.
+### 2.) ATS Formula
 
-### 3.) ATS Formula
-**ATS = (((50-(AVG((Resolution Time in Bhrs)/3600000)*.7))+(33-(AVG((Avg Response Time in Bhrs)/3600000)*.1))+(28-(AVG((First Response Time in Bhrs)/3600000)*.2))))**
+The basic weighted time calculation is inverted for fairness: **faster times produce higher ATS scores.**
+```
+ATS = 100 / ((Avg(Resolution Time) * 0.5) + 
+             (Avg(Response Time) * 0.2) +
+             (Avg(First Response Time) * 0.3))
+```
+*The constant 100 can be adjusted to best fit your team's environment—calibrate so the "team average" (see below) comes out to roughly 50.*
 
-The formula:
-- Converts milliseconds to hours (division by 3600000)
-- Applies the appropriate weighting factor to each metric (0.7, 0.1, 0.2)
-- Subtracts from the maximum possible score for each category
+**Example:**  
+Agent A averages:
+- **Resolution:** 2 hours
+- **Response:** 1 hour
+- **First Response:** 0.5 hours
 
-Example:
-Agent A has:
-- Average Resolution Time: 4 hours (14,400,000 ms)
-- Average Response Time: 1 hour (3,600,000 ms)
-- Average First Response Time: 30 minutes (1,800,000 ms)
+ATS = 100 / ((2*0.5) + (1*0.2) + (0.5*0.3))  
+ATS = 100 / (1 + 0.2 + 0.15)  
+ATS = 100 / 1.35 = **74.07**
 
-ATS = (((50-(14,400,000/3600000)*.7)+(33-(3,600,000/3600000)*.1))+(28-(1,800,000/3600000)*.2)))
-    = (((50-(4*.7))+(33-(1*.1))+(28-(0.5*.2)))
-    = (((50-2.8)+(33-0.1)+(28-0.1))
-    = ((47.2+32.9)+27.9)
-    = 108
+Agent B averages:
+- **Resolution:** 4 hours
+- **Response:** 2 hours
+- **First Response:** 1 hour
+
+ATS = 100 / ((4*0.5) + (2*0.2) + (1*0.3))  
+ATS = 100 / (2 + 0.4 + 0.3)  
+ATS = 100 / 2.7 = **37.04**
 
 ## Score Range
-* 100+ ATS = Exceptional efficiency, consistently providing rapid responses and resolutions
-* 85-99 ATS = Strong performer with good time management skills
-* 70-84 ATS = Average performance, meeting basic time expectations
-* <70 ATS = Needs improvement in response and resolution times
 
-## Implementation Notes
-* Time metrics are measured in business hours (Bhrs) to account for working hours only
-* The maximum possible score is 111 (50+33+28) when all response and resolution times are instantaneous
-* The bottom 25% benchmark adjustment helps create a more realistic and achievable target
-* Negative scores are possible for extremely long handling times and should trigger immediate review
+These thresholds are sample values—tweak to match your team’s distribution.
+- **100+ ATS / day**: GOAT 🐐  
+  Absolutely elite time management. They handle tickets faster than problems can occur, setting the bar for everyone.
+- **75+ ATS / day**: All Star ⭐  
+  Performs well above average, always responsive and efficient.
+- **50 ATS / day**: Team Average 📊  
+  Dependable and steady, meeting the expectations for ticket handling and customer service.
+- **25 ATS / day**: Below Average ⚠️  
+  Time management needs improvement. May benefit from coaching or workflow adjustments.
+- **15 ATS / day or less**: Encouragement Needed 🎯  
+  Check in to offer support—there’s a real opportunity to help this agent build better habits.
+
+## Notes & Best Practices
+
+- **Sample Size**: Calculate ATS over at least 10 tickets or over a full week/month for trend accuracy.
+- **Data Quality**: Ensure resolution and response times ignore tickets paused or waiting for customer input.
+- **Customization**: Adjust the weights to reflect organizational priorities (e.g., heavier focus on resolution for highly technical teams).
