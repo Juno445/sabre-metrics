@@ -1,65 +1,77 @@
-# Real Technician Value (RTV)
+# RTV - Real Technician Value
 
 ## Abstract
-Real Technician Value (RTV) provides a comprehensive evaluation of technician performance by combining time efficiency with ticket complexity handling. This holistic metric balances speed, quality, and the ability to tackle challenges of varying difficulty, offering a more accurate representation of a technician's true value to the organization.
+
+"A truly valuable technician brings more than just speed or ticket volume—they bring skill, impact, adaptability, and efficiency."  
+Traditional IT performance metrics often evaluate agents in silos (speed, volume, complexity). **RTV (Real Technician Value)** synthesizes these different aspects into a single, comprehensive score—much like “WAR” (Wins Above Replacement) in baseball. With RTV, you can easily compare and recognize the broad impact of each technician, balancing their efficiency and the difficulty of the problems they solve.
 
 ## Introduction
-IT service desk performance traditionally suffers from siloed metrics that fail to capture the complete picture of technician contribution. Some technicians excel at speed but avoid complex tickets, while others tackle challenging issues but take longer to resolve them.
 
-RTV addresses this challenge by:
-* Integrating time efficiency (Agent Time Score) with ticket complexity handling
-* Weighting performance based on both quantity and difficulty of tickets resolved
-* Creating a single, balanced metric that reflects true operational value
+Technicians are often measured by one-dimensional statistics: fastest response, most tickets closed, highest complexity solved. While useful, these miss the mark in capturing a tech’s holistic value to the team and business. RTV merges time management (ATS) and ticket complexity (WTCS), rewarding those who not only work quickly but also tackle challenging, high-impact issues.
+
+**Why RTV?**
+- Provides a true “all-around” performance score for each technician.
+- Combines efficiency (Agent Time Score) with challenge level (Ticket Complexity Score).
+- Helps identify not only specialists but also well-rounded, high-impact teammates.
 
 ## Methodology
 
-### 1.) Component Integration
-RTV combines two key performance dimensions:
-* **Agent Time Score (ATS)**: Measures response and resolution time efficiency
-* **Ticket Volume by Complexity**: Accounts for the number and difficulty of tickets handled
+### 1.) Inputs
+
+**Agent Time Score Composite**  
+(See: [Agent Time Score](https://github.com/Juno445/sabre-metrics/blob/main/Composite%20Metrics/ATS.md))  
+A weighted measurement (typically 0-100+) that evaluates how efficiently an agent handles their tickets.
+
+**Ticket Complexity Score**  
+(See: [WTCS](https://github.com/Juno445/sabre-metrics/blob/main/Composite%20Metrics/TCS.md))  
+A weighted count reflecting the difficulty and criticality of the tickets an agent resolves.
 
 ### 2.) RTV Formula
-**RTV = ((Agent Time Score * (((Low Ticket + Medium Ticket) + High Ticket) + Urgent Ticket)) * 0.01)**
 
-The formula:
-- Multiplies the Agent Time Score by the total weighted ticket count
-- Applies a scaling factor (0.01) for readability and practical interpretation
+The composite RTV blends the above metrics, doubling the emphasis on complexity and scaling within common team scoring ranges.
 
-Example:
-Technician A has:
-- Agent Time Score: 95
-- Low Tickets: 20
-- Medium Tickets: 10
-- High Tickets: 5
-- Urgent Tickets: 2
+```
+RTV = (Agent Time Score Composite × (Ticket Complexity Score × 2)) / 100
+```
 
-RTV = ((95 * (((20 + 10) + 5) + 2)) * 0.01)
-    = ((95 * ((30 + 5) + 2)) * 0.01)
-    = ((95 * (35 + 2)) * 0.01)
-    = ((95 * 37) * 0.01)
-    = (3515 * 0.01)
-    = 35.15
+**Example:**  
+Agent A:
+- Agent Time Score Composite = 60
+- Ticket Complexity Score = 12
 
-### 3.) Interpretation
-RTV provides a balanced view that rewards both:
-- Efficiency in handling tickets (through the ATS component)
-- Willingness to take on tickets of all complexity levels (through the ticket count component)
+RTV = (60 × (12 × 2)) / 100  
+RTV = (60 × 24) / 100  
+RTV = 1440 / 100 = **14.4**
+
+Agent B:
+- Agent Time Score Composite = 80
+- Ticket Complexity Score = 22
+
+RTV = (80 × (22 × 2)) / 100  
+RTV = (80 × 44) / 100  
+RTV = 3520 / 100 = **35.2**
+
+Agent B’s score reflects both their efficiency and their willingness/ability to take on hard problems.
 
 ## Score Range
-* 40+ RTV = Elite performer delivering exceptional value across all dimensions
-* 30-39 RTV = High-value technician with strong overall performance
-* 20-29 RTV = Solid contributor meeting expectations
-* 10-19 RTV = Developing technician with improvement opportunities
-* <10 RTV = Requires significant performance improvement and coaching
 
-## Implementation Benefits
-* **Balanced Evaluation**: Prevents gaming the system by focusing solely on speed or volume
-* **Growth Encouragement**: Rewards technicians for taking on challenging tickets
-* **Comprehensive Assessment**: Captures both efficiency and effectiveness dimensions
-* **Fair Comparison**: Allows for meaningful comparison between technicians with different workloads
+These thresholds can be tailored to your organization, but are designed for easy benchmarking and encouragement:
 
-## Usage Guidelines
-* RTV should be calculated on a consistent time period (weekly or monthly) for fair comparison
-* Consider team averages and historical trends when interpreting individual RTV scores
-* Use RTV alongside qualitative assessments for performance reviews and coaching
-* Periodically review the formula weights to ensure alignment with organizational priorities
+| RTV Score | Performance Tier        | Description                                        |
+|-----------|------------------------|----------------------------------------------------|
+| 50+       | GOAT 🐐                | Legendary all-around IT performer                  |
+| 30+       | All Star ⭐             | Elite, regularly delivers excellence               |
+| 20+       | Solid Tech 🏅           | Reliable, high-value member of the team            |
+| 15        | Average 📊              | Dependable technician, steady and consistent       |
+| 10 and <  | Encouragement Needed 🎯 | Could use support—coach for growth and development |
+
+## Notes & Best Practices
+
+- **Transparency:** Share the RTV methodology openly with your team so everyone knows how they are measured.
+- **Calibration:** If your average is too high/low, tune scaling factors for ATS or WTCS, or adjust the divisor (100).
+- **Context:** Use RTV alongside qualitative observations—great techs can have off weeks or take on non-ticket projects.
+- **Sample Size:** Ensure both ATS and WTCS are calculated over a meaningful period/ticket count for fairness.
+
+---
+
+Let me know if you’d like any tweaks or to see documentation for your next metric!
