@@ -109,7 +109,7 @@ See our [thesis paper](THESIS.md) in this repo for a deep dive and case study an
 |--------|----------------|
 | ATS    | Resolution time, response time, first response time per ticket |
 | TCS    | Ticket type/priority and count |
-| RTV    | Output of ATS and TCS |
+| RTV    | Output of ATS * TCS |
 | SPS    | # Tickets per agent, average res time, team averages |
 | UFS    | Agent reply count, reassign counts, ticket open time, ticket count |
 | TRI    | Ticket impact level, duration, endpoint/office data, revenue |
@@ -117,8 +117,6 @@ See our [thesis paper](THESIS.md) in this repo for a deep dive and case study an
 ---
 
 ## Sample Usage
-
-See [/examples](examples/) for calculation templates (SQL, Excel, Python) for each metric.
 
 Example—**Agent Time Score (SQL)**:
 ```sql
