@@ -15,6 +15,7 @@ WTCS addresses this gap by:
 
 ## Methodology
 ### 1.) Complexity & Impact Weighting
+
 Tickets are categorized into four tiers based on priority:
 - Low = 0.1
 - Medium = 0.2
@@ -58,6 +59,7 @@ This would output `WTCS: 7.6884` for the Technician A scenario above.
 
 ## Score Range
 Scoring thresholds can be tuned to your environment. The following example ranges assume a standard deviation similar to the example above:
+
 - **1.5+ WTCS/day** – Exemplary performer who consistently resolves complex, high-impact tickets.
 - **1.25 WTCS/day** – Strong technician comfortable tackling challenging issues.
 - **1 WTCS/day** – Average technician meeting standard expectations.
