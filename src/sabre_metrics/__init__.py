@@ -1,5 +1,8 @@
 """Sabre-Metrics package."""
 
+
+__version__ = "0.1.0"
+
 from .agent_time_score import calculate_ats
 from .ticket_complexity_score import calculate_tcs
 from .real_technician_value import calculate_rtv
@@ -15,6 +18,8 @@ __all__ = [
     "calculate_rtv",
     "calculate_sps",
     "calculate_ufs",
+    "calculate_wsps",
+    "calculate_wufs",
     "calculate_tri",
     "calculate_wtcs",
     "calculate_wrtv",
