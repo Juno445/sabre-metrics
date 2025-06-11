@@ -35,8 +35,13 @@ def calculate_tri(medium_loss, high_loss, urgent_loss, violations):
 
 def calculate_wtcs(low, medium, high, urgent, stddev):
     """Weighted Ticket Complexity Score."""
-    base = calculate_tcs(low, medium, high, urgent)
-    return base * (stddev / 0.2)
+    weighted_total = (
+        (low * 0.1)
+        + (medium * 0.2)
+        + (high * 0.3)
+        + (urgent * 0.4)
+    )
+    return weighted_total * stddev
 
 
 def calculate_wrtv(ats, low, medium, high, urgent):
