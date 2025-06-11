@@ -1,0 +1,7 @@
+site_name: Sabre-Metrics Documentation
+nav:
+  - Home: README.md
+  - Quick Start: docs/quick_start.md
+  - Composite Metrics: docs/composite_metrics
+  - Weighted Metrics: docs/weighted_vs_group
+  - Scoring: docs/scoring
