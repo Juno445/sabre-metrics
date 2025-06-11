@@ -24,8 +24,7 @@ Tickets are categorized into four tiers based on priority:
 
 Add the standard deviation across the last 90 days (calculated separately). We'll denote this as **D** (1.788 in the example).
 
-Multiply by `0.1` to keep scores easy to read.
-
+Optionally, you can apply a small scaling factor (e.g., 0.1) for readability, but the standard implementation multiplies the weighted sum directly by D.
 ### 2.) WTCS Formula
 ```
 WTCS = Σ(Tickets Resolved × Complexity Weight) × D
