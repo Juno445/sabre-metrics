@@ -1,7 +1,13 @@
 """Weighted Ticket Complexity Score utilities."""
 
 
-def calculate_wtcs(low: int, medium: int, high: int, urgent: int, stddev: float) -> float:
+def calculate_wtcs(
+    low: int,
+    medium: int,
+    high: int,
+    urgent: int,
+    stddev: float,
+) -> float:
     """Calculate Weighted Ticket Complexity Score (WTCS)."""
     counts = [low, medium, high, urgent]
     if any(c < 0 for c in counts):

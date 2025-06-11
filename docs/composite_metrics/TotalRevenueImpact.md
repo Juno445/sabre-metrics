@@ -164,6 +164,7 @@ Suppose across those tickets:
 ## Configuration & Extension
 
 - Change weights to match business criticality as needed (e.g., some sites are more critical)
+- For weighted calculations see [Weighted Total Revenue Impact](../weighted_vs_group/WTRI.md)
 - Integrate with real-time outage monitoring for instant TRI estimation during incidents
 - Tie TRI to incentive programs for continuous improvement
 

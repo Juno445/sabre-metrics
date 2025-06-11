@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+
 def calculate_wsps(
     agent_tickets: float,
     team_avg_tickets: float,

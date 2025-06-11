@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+
 def calculate_wufs(
     reply_count: int,
     reassign_count: int,
