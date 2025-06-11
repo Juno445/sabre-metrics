@@ -132,6 +132,11 @@ GROUP BY agent_id;
 ```
 *See the documentation folder for more detailed steps for each metric.*
 
+You can also experiment with the formulas using the Python helper script:
+```bash
+python examples/calculate_metrics.py ats 2 1 0.5
+```
+
 ---
 
 ## Contributing
