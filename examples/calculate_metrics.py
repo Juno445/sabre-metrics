@@ -1,4 +1,6 @@
 import argparse
+from sabre_metrics.weighted_scalability_performance_score import calculate_wsps
+from sabre_metrics.weighted_user_friction_score import calculate_wufs
 
 
 def calculate_ats(resolution, response, first_response):
@@ -18,13 +20,12 @@ def calculate_rtv(ats, tcs):
 
 def calculate_weighted_sps(agent_tickets, team_avg_tickets, agent_res_time, team_res_time):
     """Compute Weighted Scalability Performance Score."""
-    return (agent_tickets / team_avg_tickets) ** 0.7 * (team_res_time / agent_res_time) ** 1.3
+    return calculate_wsps(agent_tickets, team_avg_tickets, agent_res_time, team_res_time)
 
 
 def calculate_weighted_ufs(reply_count, reassign_count, time_ms, ticket_count):
     """Compute time-weighted User Friction Score in minutes."""
-    total_minutes = reply_count * 2 + reassign_count * 5 + time_ms / 60000
-    return total_minutes / ticket_count
+    return calculate_wufs(reply_count, reassign_count, time_ms, ticket_count)
 
 
 def calculate_tri(medium_loss, high_loss, urgent_loss, violations):
