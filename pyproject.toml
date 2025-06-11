@@ -1,0 +1,15 @@
+[project]
+name = "sabre-metrics"
+version = "0.1.0"
+description = "Data-driven metrics for measuring support team value."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+dependencies = []
+
+[tool.setuptools]
+packages = [{include = "sabre_metrics"}]
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"

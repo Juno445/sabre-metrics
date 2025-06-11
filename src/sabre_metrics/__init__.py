@@ -1,5 +1,7 @@
 """Sabre-Metrics package."""
 
+__version__ = "0.1.0"
+
 from .agent_time_score import calculate_ats
 from .ticket_complexity_score import calculate_tcs
 from .real_technician_value import calculate_rtv
