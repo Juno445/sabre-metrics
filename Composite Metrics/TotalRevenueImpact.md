@@ -120,6 +120,14 @@ Suppose across those tickets:
 
 **Leadership can immediately see**: “Every critical ticket we miss represents, on average, $X in risked revenue.”
 
+### Sample Score Ranges
+| TRI (USD) | Risk Level            |
+|-----------|----------------------|
+| >1000     | Critical financial risk |
+| 500–1000  | Elevated concern       |
+| 100–499   | Moderate impact        |
+| <100      | Minimal impact         |
+
 ---
 
 ## Implementation Checklist
@@ -163,4 +171,5 @@ Suppose across those tickets:
 
 ## License
 
-MIT License—see [LICENSE](LICENSE).
+This project is licensed under the GNU General Public License v3.0—see
+[LICENSE](../LICENSE) for details.

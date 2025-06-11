@@ -1,10 +1,10 @@
 # TCS Composite
 
 ## Score Ranges
-100+ = Hall of Famer
 
-75+ = All Star
-
-50 = Average
-
-35 and below = encouragement needed
+| TCS Score | Performance Level        |
+|-----------|-------------------------|
+| 100+      | Hall of Fame contributor |
+| 75–99     | High performer          |
+| 50–74     | Average                 |
+| <50       | Coaching recommended    |

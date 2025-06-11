@@ -132,6 +132,11 @@ GROUP BY agent_id;
 ```
 *See the documentation folder for more detailed steps for each metric.*
 
+You can also experiment with the formulas using the Python helper script:
+```bash
+python examples/calculate_metrics.py ats 2 1 0.5
+```
+
 ---
 
 ## Contributing
@@ -146,7 +151,8 @@ Areas for collaboration include:
 
 ## License
 
-MIT License—see [LICENSE](LICENSE).
+This project is licensed under the GNU General Public License v3.0—see
+the [LICENSE](LICENSE) file for details.
 
 ---
 
