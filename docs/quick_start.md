@@ -28,4 +28,10 @@ print(ats, tcs, rtv, wsps, wufs)
 
 ```
 
+You can also compute metrics from the command line once installed:
+
+```bash
+sabre-metrics ats 2 1 0.5
+```
+
 For more details on each metric see the documents in this `docs/` directory.

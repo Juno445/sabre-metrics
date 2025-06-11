@@ -10,6 +10,9 @@ dependencies = []
 [tool.setuptools]
 packages = [{include = "sabre_metrics"}]
 
+[project.scripts]
+sabre-metrics = "sabre_metrics.cli:main"
+
 [build-system]
 requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"

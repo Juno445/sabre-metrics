@@ -1,7 +1,13 @@
 """Weighted Real Technician Value utilities."""
 
 
-def calculate_wrtv(agent_time_score: float, low: int, medium: int, high: int, urgent: int) -> float:
+def calculate_wrtv(
+    agent_time_score: float,
+    low: int,
+    medium: int,
+    high: int,
+    urgent: int,
+) -> float:
     """Calculate Weighted Real Technician Value (WRTV)."""
     counts = [low, medium, high, urgent]
     if any(c < 0 for c in counts):
