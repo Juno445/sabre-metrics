@@ -1,5 +1,5 @@
 import pytest
-import pytest
+
 from sabre_metrics.weighted_real_technician_value import calculate_wrtv
 
 
