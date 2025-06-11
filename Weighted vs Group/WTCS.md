@@ -9,33 +9,43 @@ Modern IT environments are dynamic and complex. A technician resolving 50 passwo
 
 WTCS addresses this gap by:
 
-* Assigning weights to tickets based on complexity, urgency, and business impact.
-* Creating a scorecard that reflects the true effort and strategic value of work.
-* Encouraging technicians to tackle challenging issues while ensuring fair evaluation.
+- Assigning weights to tickets based on complexity, urgency, and business impact.
+- Creating a scorecard that reflects the true effort and strategic value of work.
+- Encouraging technicians to tackle challenging issues while ensuring fair evaluation.
 
 ## Methodology
 ### 1.) Complexity & Impact Weighting
-Tickets are categorized into 4 tiers based on priority
-* Low = .1
-* Medium = .2
-* High = .3
-* Urgent = .4
 
-Then we add the standard deviation across the last 90 days (calculated separately). Let's assume 1.788 or **D**.
+Tickets are categorized into four tiers based on priority:
+- Low = 0.1
+- Medium = 0.2
+- High = 0.3
+- Urgent = 0.4
 
-Finally multiply by `0.1` to keep scores easy to read.
+Add the standard deviation across the last 90 days (calculated separately). We'll denote this as **D** (1.788 in the example).
+
+Multiply by `0.1` to keep scores easy to read.
+
 ### 2.) WTCS Formula
-**WTCS=∑(Tickets Resolved×Complexity Weight) x D)**
+```
+WTCS = Σ(Tickets Resolved × Complexity Weight) × D
+```
 
 Example:
 
-Technician A resolves 20 low (.1x), 10 medium (.2x), and 1 high (.3x) tickets:
+Technician A resolves 20 low (×0.1), 10 medium (×0.2), and 1 high (×0.3) ticket:
 
-WTCS=(20×.1)+(10×.2)+(1x.3)=2+2+.3 = 4.3 x 1.788 = **7.6884** 
+```
+(20 × 0.1) + (10 × 0.2) + (1 × 0.3) = 4.3
+4.3 × 1.788 = 7.6884
+```
 
-Technician B resolves 30 low (.1x) and 1 medium (.2x) tickets:
+Technician B resolves 30 low (×0.1) and 1 medium (×0.2) ticket:
 
-WTCS=(30×.1)+(1×.2)=3+.2= 3.2 x 1.788 = **5.7216**
+```
+(30 × 0.1) + (1 × 0.2) = 3.2
+3.2 × 1.788 = 5.7216
+```
 
 Technician A’s score is higher despite resolving fewer tickets, reflecting their focus on high-impact work.
 
@@ -49,7 +59,8 @@ This would output `WTCS: 7.6884` for the Technician A scenario above.
 
 ## Score Range
 Scoring thresholds can be tuned to your environment. The following example ranges assume a standard deviation similar to the example above:
-* **1.5+ WTCS/day** – Exemplary performer who consistently resolves complex, high-impact tickets.
-* **1.25 WTCS/day** – Strong technician comfortable tackling challenging issues.
-* **1 WTCS/day** – Average technician meeting standard expectations.
-* **0.25 WTCS/day** – Technician needing additional coaching and support.
+
+- **1.5+ WTCS/day** – Exemplary performer who consistently resolves complex, high-impact tickets.
+- **1.25 WTCS/day** – Strong technician comfortable tackling challenging issues.
+- **1 WTCS/day** – Average technician meeting standard expectations.
+- **0.25 WTCS/day** – Technician needing additional coaching and support.
