@@ -15,6 +15,7 @@ Traditional IT support metrics often reward superficial volume and speed, missin
 - [Implementation](#implementation)
 - [Data Requirements](#data-requirements)
 - [Sample Usage](#sample-usage)
+- [Quick Start](#quick-start)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -130,12 +131,16 @@ SELECT
 FROM tickets
 GROUP BY agent_id;
 ```
-*See the documentation folder for more detailed steps for each metric.*
+*See the docs folder for more detailed steps for each metric.*
 
 You can also experiment with the formulas using the Python helper script:
 ```bash
 python examples/calculate_metrics.py ats 2 1 0.5
 ```
+
+## Quick Start
+
+See [docs/quick_start.md](docs/quick_start.md) for a brief tutorial on running these metrics in Python.
 
 ---
 
